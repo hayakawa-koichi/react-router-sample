@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  node:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    command: sh -c 'cd front && npm run start'
+    ports:
+      - "3000:3000"
+    tty: true
+    volumes:
+      - "./:/home/node/app"
+    working_dir: /home/node/app
